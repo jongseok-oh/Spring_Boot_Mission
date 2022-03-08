@@ -3,6 +3,8 @@ import io.jong.basicMission.post.PostRepository;
 import io.jong.basicMission.post.PostRepositoryInMemory;
 
 
+
+
 public class BoardDto {
     private String boardName;
     private PostRepository postRepository;

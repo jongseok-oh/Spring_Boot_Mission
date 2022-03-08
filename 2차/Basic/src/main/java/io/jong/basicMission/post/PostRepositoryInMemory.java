@@ -13,6 +13,7 @@ public class PostRepositoryInMemory implements PostRepository{
     private final Map<String, PostDto> PostMap;
     private String AutoInc = "0";
 
+
     public PostRepositoryInMemory() {
         this.PostMap = new HashMap<>();
     }

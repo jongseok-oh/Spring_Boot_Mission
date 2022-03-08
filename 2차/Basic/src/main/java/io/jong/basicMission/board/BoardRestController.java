@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+// method : /board ->
+
 @RestController
 @RequestMapping("board")
 public class BoardRestController {

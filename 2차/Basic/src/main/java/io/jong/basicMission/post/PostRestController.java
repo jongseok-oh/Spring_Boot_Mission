@@ -9,16 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+// method : post/{보드네임}/ ->
+
 @RestController
 @RequestMapping("post/{BoardName}")
 public class PostRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(PostRestController.class);
 
-    private final PostService postService;
-    private final BoardService boardService;
+     private final PostService postService;
+     private final BoardService boardService;
 
-    public PostRestController(@Autowired PostService postService
+    public PostRestController( @Autowired PostService postService
     , @Autowired BoardService boardService) {
         this.postService = postService;
         this.boardService = boardService;
