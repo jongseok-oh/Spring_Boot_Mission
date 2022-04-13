@@ -1,5 +1,6 @@
-package com.jongking.jpa;
+package com.jongking.jpa.dao;
 
+import dto.UserDto;
 import com.jongking.jpa.entity.UserEntity;
 import com.jongking.jpa.repository.PostRepository;
 import com.jongking.jpa.repository.UserRepository;

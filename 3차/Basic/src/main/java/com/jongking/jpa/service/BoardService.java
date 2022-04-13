@@ -1,7 +1,8 @@
-package com.jongking.jpa;
+package com.jongking.jpa.service;
 
+import dto.BoardDto;
+import com.jongking.jpa.dao.BoardDao;
 import com.jongking.jpa.entity.BoardEntity;
-import com.jongking.jpa.entity.PostEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

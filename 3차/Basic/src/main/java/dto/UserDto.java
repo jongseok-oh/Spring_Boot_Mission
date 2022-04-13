@@ -1,4 +1,4 @@
-package com.jongking.jpa;
+package dto;
 
 public class UserDto {
     private String userName;

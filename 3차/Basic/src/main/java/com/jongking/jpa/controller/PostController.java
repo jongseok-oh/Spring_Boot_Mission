@@ -1,5 +1,8 @@
-package com.jongking.jpa;
+package com.jongking.jpa.controller;
 
+import com.jongking.jpa.aspect.LogExecutionTime;
+import dto.PostDto;
+import com.jongking.jpa.service.PostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +31,14 @@ public class PostController {
         this.postService.createPost(dto);
     }// CREATE
 
+
     @GetMapping("{id}")
     public PostDto readPost(@PathVariable("id") int id){
         return this.postService.readPost(id);
     }
     // READ
 
+    @LogExecutionTime
     @GetMapping("")
     public List<PostDto> readPostAll(){
         return this.postService.readPostAll();

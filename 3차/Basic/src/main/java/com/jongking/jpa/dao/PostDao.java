@@ -1,5 +1,6 @@
-package com.jongking.jpa;
+package com.jongking.jpa.dao;
 
+import dto.PostDto;
 import com.jongking.jpa.entity.BoardEntity;
 import com.jongking.jpa.entity.PostEntity;
 import com.jongking.jpa.entity.UserEntity;

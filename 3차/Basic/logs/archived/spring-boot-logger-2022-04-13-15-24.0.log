@@ -1,0 +1,5 @@
+2022-04-13 15:24:18,741 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-13 15:24:26,220 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] method description: [public void com.jongking.jpa.controller.BoardController.createBoard(dto.BoardDto)]
+2022-04-13 15:24:26,223 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] method name: [createBoard]
+2022-04-13 15:24:26,224 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] declaring class: [class com.jongking.jpa.controller.BoardController]
+2022-04-13 15:24:26,224 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-2] argument: [BoardDto{board_id=0, title='Economy'}]

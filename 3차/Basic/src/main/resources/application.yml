@@ -2,6 +2,11 @@ spring:
   profiles:
     active: test # -> 요기서 변경
 
+#logging:
+#  level:
+#    root: debug -> 로그 기본 레벨 설정
+#    com.jongking.jpa: info -> 패키지 내부에 있는 info만
+
 ---
 spring:
   config:

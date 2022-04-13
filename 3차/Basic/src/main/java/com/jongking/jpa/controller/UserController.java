@@ -1,9 +1,8 @@
-package com.jongking.jpa;
+package com.jongking.jpa.controller;
 
-import com.jongking.jpa.entity.PostEntity;
+import dto.UserDto;
 import com.jongking.jpa.entity.UserEntity;
 import com.jongking.jpa.repository.UserRepository;
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

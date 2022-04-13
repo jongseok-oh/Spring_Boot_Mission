@@ -1,5 +1,6 @@
-package com.jongking.jpa;
+package com.jongking.jpa.dao;
 
+import dto.BoardDto;
 import com.jongking.jpa.entity.BoardEntity;
 import com.jongking.jpa.repository.BoardRepository;
 import org.slf4j.Logger;

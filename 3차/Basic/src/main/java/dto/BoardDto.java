@@ -1,4 +1,4 @@
-package com.jongking.jpa;
+package dto;
 
 public class BoardDto {
     private int board_id;

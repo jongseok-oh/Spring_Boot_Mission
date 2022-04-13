@@ -1,0 +1,3 @@
+2022-04-13 15:37:05,246 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-3] method name: [readBoard]
+2022-04-13 15:37:05,250 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-3] return type: [class dto.BoardDto]
+2022-04-13 15:37:05,250 TRACE com.jongking.jpa.aspect.LoggingAspect [http-nio-8080-exec-3] return value: [BoardDto{board_id=1, title='Economy'}]

@@ -1,5 +1,7 @@
-package com.jongking.jpa;
+package com.jongking.jpa.service;
 
+import dto.PostDto;
+import com.jongking.jpa.dao.PostDao;
 import com.jongking.jpa.entity.PostEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

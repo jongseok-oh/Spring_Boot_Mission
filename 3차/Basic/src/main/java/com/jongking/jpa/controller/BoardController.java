@@ -1,6 +1,10 @@
-package com.jongking.jpa;
+package com.jongking.jpa.controller;
 
-import com.jongking.jpa.repository.BoardRepository;
+import com.jongking.jpa.aspect.LogArguments;
+import com.jongking.jpa.aspect.LogExecutionTime;
+import com.jongking.jpa.aspect.LogReturn;
+import dto.BoardDto;
+import com.jongking.jpa.service.BoardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +25,21 @@ public class BoardController {
         this.boardService = boardService;
     }
 
+    @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public void createBoard(@RequestBody BoardDto dto){
         this.boardService.createBoard(dto);
     }// CREATE
 
+    @LogReturn
     @GetMapping("{id}")
     public BoardDto readBoard(@PathVariable("id") int id)
     {
         return boardService.readBoard(id);
     }// READ
 
+    @LogExecutionTime
     @GetMapping("")
     public List<BoardDto> readBoardAll(){return this.boardService.readBoardAll();}
     // READ ALL
