@@ -1,12 +1,20 @@
 # 3차 미션 스크린샷
 
-## POST CREATE
-![image](https://user-images.githubusercontent.com/80913353/157248723-1f7b9581-f610-429c-b5ce-d8940d2738c8.png)
-## POST READ ALL
-![image](https://user-images.githubusercontent.com/80913353/157248940-c2046bc3-b006-4248-8c58-e212a5c6b912.png)
-## USER READ ALL
-![image](https://user-images.githubusercontent.com/80913353/157249004-70a8ffbd-bddd-4aee-8590-78f698c81bbd.png)
-## USER READ ONE
-![image](https://user-images.githubusercontent.com/80913353/157249096-6839d37e-4023-4da0-9f2d-0207af7739ae.png)
+## BOARD CREATE && UPDATE
+![image](https://user-images.githubusercontent.com/80913353/163337392-ff02dbbb-7a0c-4464-8541-9d525ac25c9d.png)
 
-Foreign Key가 연결 되어 있는 상황에서는 Delete가 작동하지 않습니다.
+## BOARD READ ALL
+![image](https://user-images.githubusercontent.com/80913353/163337525-9e81c8c5-a08a-438f-ae7e-6ace7344dd67.png)
+
+## USER CREATE && UPDATE
+![image](https://user-images.githubusercontent.com/80913353/163337965-4ee03498-9a9d-4f68-869e-4cfa6d536294.png)
+## USER READ ONE
+![image](https://user-images.githubusercontent.com/80913353/163338050-55e0b36f-fbac-4e60-a047-534c82b28e6f.png)
+
+## POST CREATE && UPDATE
+![image](https://user-images.githubusercontent.com/80913353/163339707-8daa181b-efbe-4b4b-9c40-24f301795539.png)
+## POST READ ALL
+![image](https://user-images.githubusercontent.com/80913353/163339828-e4a89ddc-f0e6-4664-bea5-bba8f8b00f92.png)
+
+
+
