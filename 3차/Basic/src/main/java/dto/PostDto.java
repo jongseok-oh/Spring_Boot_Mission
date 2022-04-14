@@ -1,9 +1,15 @@
 package dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class PostDto {
     private int id;
+    @NotNull
     private String title;
+    @Size(max = 40)
     private String content;
+    @Size(min = 3, max = 10)
     private String writer;
     private String passWord;
     private int boardId;

@@ -1,5 +1,6 @@
 package com.jongking.jpa.controller;
 
+import com.jongking.jpa.aspect.LogArguments;
 import com.jongking.jpa.aspect.LogExecutionTime;
 import dto.PostDto;
 import com.jongking.jpa.service.PostService;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,9 +25,11 @@ public class PostController {
         this.postService = postService;
     }
 
+    @LogExecutionTime
+    @LogArguments
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void createPost(@RequestBody PostDto dto,
+    public void createPost(@Valid @RequestBody PostDto dto,
                           @PathVariable("boardId") int boardId){
         dto.setBoardId(boardId);
         this.postService.createPost(dto);
