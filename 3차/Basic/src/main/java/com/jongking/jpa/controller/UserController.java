@@ -1,78 +1,68 @@
 package com.jongking.jpa.controller;
 
-import dto.UserDto;
-import com.jongking.jpa.entity.UserEntity;
-import com.jongking.jpa.repository.UserRepository;
+import com.jongking.jpa.aspect.LogArguments;
+import com.jongking.jpa.aspect.LogExecutionTime;
+import com.jongking.jpa.aspect.LogReturn;
+import com.jongking.jpa.service.UserService;
+import com.jongking.jpa.dto.UserDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("user")
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     public UserController(
-            @Autowired UserRepository userRepository
+            @Autowired UserService userService
     ) {
-        this.userRepository = userRepository;
+        this.userService = userService;
     }
 
-    @GetMapping("{user}")
-    public UserDto readUser(@PathVariable("user") String user){
-        Optional<UserEntity> userEntity = this.userRepository.findById(user);
+    @LogArguments
+    @LogExecutionTime
+    @LogReturn
+    @PostMapping
+    public void createUser(@RequestBody UserDto dto){
+        this.userService.createUser(dto);
+    }// CREATE
 
-        if(userEntity.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        UserEntity targetEntity = userEntity.get();
-        UserDto tempDto = new UserDto(targetEntity.getUserName());
-        return tempDto;
-    }
+    @LogArguments
+    @LogExecutionTime
+    @LogReturn
+    @GetMapping("{id}")
+    public UserDto readUser(@PathVariable("id") Long id){
+        return this.userService.readUser(id);
+    }// READ
 
-    @GetMapping("")
+    @LogArguments
+    @LogExecutionTime
+    @LogReturn
+    @GetMapping
     public List<UserDto> readUserAll(){
-        List<UserDto> userDtoList = new ArrayList<>();
+        return this.userService.readUserAll();
+    }// READ ALL
 
-        Iterator<UserEntity> EntIter = this.userRepository.findAll().iterator();
-
-        while(EntIter.hasNext()){
-            UserEntity userEntity = EntIter.next();
-            userDtoList.add(new UserDto(
-                    userEntity.getUserName()
-            ));
-        }
-        return userDtoList;
-    }
-
-    @PutMapping("{user}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public void updateUser(
-            @PathVariable("user") String user,
-            @RequestBody UserDto dto
+    @LogArguments
+    @LogExecutionTime
+    @LogReturn
+    @PutMapping("{id}")
+    public void updateUser(@PathVariable("id") Long id,
+                           @RequestBody UserDto dto
     ){
-        logger.info("please be changed.. " + dto.toString());
-        Optional<UserEntity> userEntity = this.userRepository.findById(user);
-        if(userEntity.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        userEntity.get().setUserName(dto.getUserName());
-    }
+        this.userService.updateUser(id,dto);
+    }// UPDATE
 
-    @DeleteMapping("{user}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public void deleteUser(
-            @PathVariable("user") String user
-    ){
-        logger.info("Why Why!! Please be deleted " + user);
-        Optional<UserEntity> userEntityOptional = this.userRepository.findById(user);
-        if(userEntityOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-
-        this.userRepository.delete(userEntityOptional.get());
+    @LogArguments
+    @LogExecutionTime
+    @LogReturn
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable("id") Long id){
+        this.userService.deleteUser(id);
     }
 }

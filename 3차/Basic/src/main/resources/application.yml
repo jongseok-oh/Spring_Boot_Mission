@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: test # -> 요기서 변경
+    active: local # -> 요기서 변경
 
 #logging:
 #  level:
@@ -8,6 +8,7 @@ spring:
 #    com.jongking.jpa: info -> 패키지 내부에 있는 info만
 
 ---
+# h2 실제 db 저장안하고 메모리상에서 운용 (test용)
 spring:
   config:
     activate:

@@ -10,14 +10,21 @@ public class PostEntity extends BaseEntity{
     private Long id;
     private String content;
     private String title;
-    private String passWord;
 
     @ManyToOne(
             targetEntity = UserEntity.class,
             fetch = FetchType.LAZY
     )
-    @JoinColumn(name = "userName")
-    private UserEntity userEntity;
+    @JoinColumn(name = "user_id")
+    private UserEntity writer;
+
+    public UserEntity getWriter() {
+        return writer;
+    }
+
+    public void setWriter(UserEntity writer) {
+        this.writer = writer;
+    }
 
     @ManyToOne(
             targetEntity = BoardEntity.class,
@@ -45,20 +52,11 @@ public class PostEntity extends BaseEntity{
         this.id = id;
     }
 
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
 
     public PostEntity(Long id, String content, String title, String passWord, UserEntity userEntity, BoardEntity boardEntity) {
         this.id = id;
         this.content = content;
         this.title = title;
-        this.passWord = passWord;
-        this.userEntity = userEntity;
         this.boardEntity = boardEntity;
     }
 
@@ -79,27 +77,13 @@ public class PostEntity extends BaseEntity{
     }
 
 
-
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
-
     @Override
     public String toString() {
         return "PostEntity{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", title='" + title + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", userEntity=" + userEntity +
                 ", boardEntity=" + boardEntity +
                 '}';
     }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
-    }
-
-
-
 }

@@ -1,22 +1,26 @@
-package dto;
+package com.jongking.jpa.dto;
+
+import javax.validation.constraints.NotBlank;
 
 public class BoardDto {
-    private int board_id;
+    private Long board_id;
+
+    @NotBlank
     private String name;
 
     public BoardDto() {
     }
 
-    public BoardDto(int board_id, String name) {
+    public BoardDto(Long board_id, String name) {
         this.board_id = board_id;
         this.name = name;
     }
 
-    public int getBoard_id() {
+    public Long getBoard_id() {
         return board_id;
     }
 
-    public void setBoard_id(int board_id) {
+    public void setBoard_id(Long board_id) {
         this.board_id = board_id;
     }
 
