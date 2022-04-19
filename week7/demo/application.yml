@@ -1,3 +1,13 @@
+spring:
+  profiles:
+    active: test
+
 logging:
   level:
-    dev.jong.demo.handler: debug
+    dev.jong.demo.interceptor: trace
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test

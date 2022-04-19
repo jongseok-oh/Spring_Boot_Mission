@@ -16,6 +16,7 @@ public class PostControllerAdvice {
     public @ResponseBody ErrorResponseDto handleException(BaseException exception){
         return new ErrorResponseDto(exception.getMessage());
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ErrorResponseDto handleValidException(
             MethodArgumentNotValidException exception
