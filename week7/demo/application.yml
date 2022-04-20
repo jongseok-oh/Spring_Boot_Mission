@@ -2,12 +2,15 @@ spring:
   profiles:
     active: test
 
-logging:
-  level:
-    dev.jong.demo.interceptor: trace
-
----
-spring:
-  config:
-    activate:
-      on-profile: test
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: health, info, loggers, shutdown, prometheus
+#management.endpoint.<function>.enabled=true
+#management.endpoint.<function>.show-details=always
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
