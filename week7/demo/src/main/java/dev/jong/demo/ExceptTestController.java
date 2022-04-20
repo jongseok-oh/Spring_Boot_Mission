@@ -1,7 +1,5 @@
 package dev.jong.demo;
 
-import dev.jong.demo.exception.BaseException;
-import dev.jong.demo.exception.ErrorResponseDto;
 import dev.jong.demo.exception.PostNotInBoardException;
 import dev.jong.demo.exception.PostNotExistException;
 import org.springframework.http.HttpStatus;

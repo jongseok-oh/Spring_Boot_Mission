@@ -1,4 +1,4 @@
-package dev.jong.demo.exception;
+package dev.jong.demo.dto;
 
 public class ErrorResponseDto {
     private String message;

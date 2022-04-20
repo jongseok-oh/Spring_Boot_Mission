@@ -1,7 +1,7 @@
 package dev.jong.demo.handler;
 
 import dev.jong.demo.exception.BaseException;
-import dev.jong.demo.exception.ErrorResponseDto;
+import dev.jong.demo.dto.ErrorResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

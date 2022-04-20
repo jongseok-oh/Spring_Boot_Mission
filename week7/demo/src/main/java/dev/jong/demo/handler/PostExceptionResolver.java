@@ -1,16 +1,11 @@
 package dev.jong.demo.handler;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.jong.demo.exception.BaseException;
-import dev.jong.demo.exception.ErrorResponseDto;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @Component
 public class PostExceptionResolver extends AbstractHandlerExceptionResolver {
