@@ -19,3 +19,14 @@ https://blog.dudaji.com/general/2020/05/25/rabbitmq.html : 엄청난 이해!..
 ## redis
 
 redis image : reids:6-alpine
+
+### commit "redis" flow
+![image](https://user-images.githubusercontent.com/80913353/166638252-4568e0e3-6440-4ad7-8dce-08e4bc3250d1.png)
+
+producer에서 no name exchange에 요청 -> Queue에 적재 (Queue가 하나 밖에 없음) ->
+
+Consumer에서 받음 @RabbitListener(queues = {queue 이름}) @RabbitHandler에서 받은 메세지를 RedisRepository에 저장
+
+이 때 전달 하는 DTO에 (Producer랑 Consumer랑 같은 값) @RedisHash("{hash 값}")
+
+Producer에서 redis를 이용해서 NoSQL 처럼 쓸 수 있다
