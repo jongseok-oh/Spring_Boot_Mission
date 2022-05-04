@@ -30,3 +30,7 @@ Consumer에서 받음 @RabbitListener(queues = {queue 이름}) @RabbitHandler에
 이 때 전달 하는 DTO에 (Producer랑 Consumer랑 같은 값) @RedisHash("{hash 값}")
 
 Producer에서 redis를 이용해서 NoSQL 처럼 쓸 수 있다
+
+
+## websocket chatting
+잘 모르겠다~^^ 나중에 코드를 더 분석해 보자
