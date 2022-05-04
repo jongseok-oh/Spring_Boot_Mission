@@ -12,3 +12,5 @@ Job Queue-> round robin 방식으로 결과를 나눠줌
 
 ![image](https://user-images.githubusercontent.com/80913353/166225556-f4706426-3dd7-4256-aec2-858638f6984e.png)
 fanoutExchange -> 모든 큐에 broad casting
+
+https://blog.dudaji.com/general/2020/05/25/rabbitmq.html : 엄청난 이해!..
