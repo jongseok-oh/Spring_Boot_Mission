@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:C:\Users\USER\Documents\python_jong\LikeLion\week10\config-native-local
