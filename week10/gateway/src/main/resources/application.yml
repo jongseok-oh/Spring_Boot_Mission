@@ -1,0 +1,38 @@
+server:
+  port: 8000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: community_shop
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/shop/**
+          filters:
+            - name: RewritePath
+              args:
+                regexp: /api/(?<path>.*)
+                replacement: /$\{path}
+            - name: Logging
+              args:
+                simpleUid: true
+                inSeconds: true
+
+        - id: community_user
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/(?<path>.*), /$\{path}
+
+        - id: community_area
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/area/**
+          filters:
+            - RewritePath=/api/(?<path>.*), /$\{path}
+
+logging:
+  level:
+    dev.jongking.gateway.filter: trace
