@@ -17,4 +17,11 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/{git address}
+          clone-on-start: true
+          basedir: .config-git-remote
+
+  security:
+    user:
+      name: root
+      password: jongking97
