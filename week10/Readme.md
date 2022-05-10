@@ -25,3 +25,18 @@ actuator관련 설정은 서버를 재시작해야 적용된다.(Config Server�
 refresh가 actuator 서버에서 관할 하는거라 health를 추가한다거나 이런건 적용이 안된다.
 
 당연한 말이지만 포트번호를 변경해도 refresh가 되진 않는다. 요것도 재시작해야함
+
+## git config
+![image](https://user-images.githubusercontent.com/80913353/167564918-16279808-444e-4cf2-854b-3c6d0f1bc845.png)
+
+
+git repository 하나 파서 git에서 config를 refresh할 수 있다.
+
+cloud 환경이라면 이게 편할 듯
+
+security로 config를 받아 올 때 name과 password가 일치해야 받아지게 설정 할 수 있다.
+
+config:
+    import: optional:configserver:root:jongking97@http://localhost:8888
+
+이런 식으로 이름과 비밀번호를 넣을 수도 있다.
