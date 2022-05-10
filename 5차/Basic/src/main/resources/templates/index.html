@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>HOME OH MY HOME</title>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        async function showPosition(position) {
+            await fetch(`/area/get-near-location?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}`)
+            .then(response => response.json())
+            .then((body) =>{alert(`제일 가까운 위치는 ${body.regionMajor} ${body.regionMinor} ${body.regionPatch}입니다.`)});
+        }
+    </script>
+</head>
+<body>
+<div sec:authorize="isAnonymous()">
+    <h2>Hello World!</h2>
+    <button onclick="location.href = '/user/login'">로그인</button>
+    <button onclick="location.href = '/user/signup'">회원가입</button>
+</div>
+
+<div sec:authorize="isAuthenticated()">
+    반갑습니다. <span sec:authentication="name"></span>님!
+    <form th:action="@{/user/logout}" method="post">
+        <input type="submit" th:value="logout">
+    </form>
+</div>
+
+<button onclick="getLocation()">Get Near Location</button>
+
+</body>
+</html>
