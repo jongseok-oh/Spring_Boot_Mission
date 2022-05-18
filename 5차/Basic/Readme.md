@@ -13,6 +13,10 @@ https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch : fetch
 
 일단 native query로 해결하긴 했지만 아직 더 공부해봐야겠다.
 
-생각해보니까 db에서 nlogn으로 sorting하고 맨 앞에꺼 떼오는거 보다
+~~생각해보니까 db에서 nlogn으로 sorting하고 맨 앞에꺼 떼오는거 보다
 
-JAVA code에서 findAll하고 sequential search하는게 n으로 더 빠를 것 같다.
+~~JAVA code에서 findAll하고 sequential search하는게 n으로 더 빠를 것 같다.
+
+DB에서 인덱싱 선언을 했을 때 얘기/ 선언을 안하면 table을 full scan하고 sorting한다.
+
+그리고 tree 구조에서 searching은 logn이다. 인덱싱 선언이 돼있으면 logn이 더 빠르다.
